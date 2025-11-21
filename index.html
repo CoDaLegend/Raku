@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rakuten</title>
+  <style>
+    * {
+      margin: 0;  
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: none;
+      flex-wrap: wrap;
+      padding: 5px  15px;
+      background-color: white;
+      position: sticky;
+      top: 0;
+      padding-right: 0px;
+      padding-left: 55px;
+      border-bottom: 0.3px solid grey;
+    }
+
+    .menu-toggle {
+      display: block;
+      cursor: pointer;
+      font-size: 30px;
+      color: white;
+    }
+
+    /* Hamburger lines */
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background: black;
+      margin: 5px 0;
+    }
+
+    .nav-left
+   {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+      background-color: white;
+      padding: 10px 0px;
+      color: black;
+    }
+
+    .navbar.open .nav-left,
+    .navbar.open .nav-right {
+      display: flex;
+    }
+
+    .center-logo {
+      order: 0;
+      width: 100%;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      color: red;
+      margin-bottom: 10px;
+      margin-left: 50px;
+    }
+
+    .nav-left a,
+    .nav-right a {
+      color: black;
+      text-decoration: none;
+      font-size: 16px;
+      margin: 8px 0;
+    }
+
+   .nav-left a:hover,
+    .nav-right a:hover,
+    .nav-left a.active,
+    .nav-right a.active {
+      color: rebeccapurple;
+    }
+
+    /* Dropdown */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      flex-direction: column;
+      padding-left: 0;
+    }
+
+    .dropdown-content a {
+      padding: 5px 0;
+      font-size: 14px;
+    }
+
+    .dropdown.open .dropdown-content {
+      display: flex;
+    }
+     .nav-right {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+      background-color: white;
+      padding: 20px 0px;
+      margin-right: -400px;
+      color: rebeccapurple;
+     }
+     button{
+      background-color: rebeccapurple;
+      color: white;
+      width: 120px;
+      height: 45px;
+      border-radius: 30px;
+      border-color: none;
+      margin-top: -15px;
+      margin-left: -50px;
+      font-size: 16px;
+     }
+    .get{
+      background-color: none;
+      width: 600px;
+      height: 240px;
+      color: black;
+      margin-left: 50px;
+      display: flex;
+      flex-direction: column;
+      margin-top: 80px;
+      }
+    .get button{
+      background-color: rebeccapurple;
+      color: white;
+      width:160px;
+      height: 50px;
+      border: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 3px;
+    }
+    .get2 button{
+      background-color: papayawhip;
+      color: rebeccapurple;
+      width: 165px;
+      height: 50px;
+      border: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 190px;
+      margin-top: -49px;
+    }
+  .image{
+      background-color: n;
+      width: 600px;
+      height: 400px;
+      color: black;
+      margin-left: 50px;
+      display: flex;
+      flex-direction: column;
+      margin-top: -350px;
+      margin-left: 750px;
+    }
+    .million{
+      background-color: none;
+      width: 600px;
+      height: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-left: -25px;
+      margin-top: -40px;
+    }
+     .miniget{
+      background-color: none;
+      width: 600px;
+      height: 50px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin-left: -45px;
+      margin-top: -25px;
+      color: grey;
+    }
+    .lulu{
+      background-color: none;
+      width: 250px;
+      height: 100px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin-left: 5px;
+    }
+    .enclose{
+      background-color: none;
+      width: 200px;
+      height: 100px;
+      margin-left: 5px;
+    }
+    .lulumen{
+      background-color: lightgrey;
+      width: 80px;
+      height: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 2px;
+    }
+    .lulubutton{
+      background-color: lightgreen;
+      width: 90px;
+      height: 30px;
+      color: green;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+    }
+    .group{
+      background-color: none;
+      width: 300px;
+      height: 350px;
+      display: flex;
+      flex-direction: column;
+      margin-left: -10px;
+    }
+    .group2{
+      background-color: none;
+      width: 300px;
+      height: 350px;
+      display: flex;
+      flex-direction: column;
+      
+    }
+    .group3{
+      background-color: none;
+      width: 300px;
+      height: 350px;
+      display: flex;
+      flex-direction: column;
+    }
+    .gengroup{
+      background-color: none;
+      width: 100%;
+      height: 360px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      margin-top: 70px;
+    }
+    .here{
+      background-color: none;
+      width: 100%;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 100px;
+      padding-bottom: 50px;
+    }
+    .big{
+      background-color: none;
+      width: 410px;
+      height: 500px;
+    }
+    .bigenclose{
+      background-color: none;
+      width: 1300px;
+      height: 500px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin-left: 50px;
+    }
+    .cardenclose{
+      background-color: none;
+      width: 1300px;
+      height: 300px;
+      display: flex;
+      flex-direction: row;
+    }
+    .card{
+      background-color: none;
+      width: 600px;
+      height: 300px;
+    }
+    .wecard{
+      background-color: none;
+      width: 500px;
+      height: 150px;
+      margin-top: 80px;
+      margin-left: 150px;
+    }
+    .wecard2{
+      background-color: none;
+      width: 500px;
+      height: 150px;
+      margin-top: 80px;
+      margin-left: 100px;
+      margin-right: 30px;
+      margin-top: 100px;
+    }
+    .itpays{
+      background-color: rgb(244, 244, 247);
+      width: 100%;
+      height: 70px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 50px;
+      padding-top: 100px;
+    }
+    .pays{
+      background-color: none;
+      height: 200px;
+      width: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-left: 5px;
+    }
+    .itpayspics{
+      background-color: rgb(244, 244, 247);
+      width: 0px;
+      height: 70px;
+      margin-right: 115px;
+      margin-bottom: 20px;
+    }
+    .people{
+      background-color: none;
+      width: 220px;
+      height: 50px;
+      margin-left: 50px;
+    }
+    .paysenclose{
+      background-color:rgb(244, 244, 247);
+      width: 1350px;
+      height: 350px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      padding-top: 80px;
+    }
+    .join{
+      background-color: none;
+      width: 100%;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+    .store{
+      background-color: none;
+      width: 100%;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .stores{
+      background-color: none;
+      width: 160px;
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+    }
+    .storeenclose{
+      background-color: none;
+      width: 1350px;
+      height: 600px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      
+      margin-top: 25px;
+    }
+    .storeenclose2{
+      background-color: black;
+      width: 1350px;
+      height: 700px;
+      display: flex;
+      justify-content: space-between;
+      margin-top: -100px;
+      padding: 20px;
+      flex-direction: column;
+    }
+
+    .redenclose {
+        background-color: none;
+      width: 1300px;
+      height: 650px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 100px;
+    }
+
+    .underred {
+      width: 1300px;
+      height: 200px;
+      background-color: none;
+    }
+    .stores2{
+      background-color: none;
+      width: 220px;
+      height: 430px;
+      color: white;
+      text-decoration: none;
+    }
+    .stores2 h4 {
+      color: grey;
+      font-size: 12px;
+    }
+    .stores2 a {
+      text-decoration: none;
+      color: white;
+      font-size: 13px;
+    }
+    .stores2 p {
+      padding: 5px;
+    }
+   
+    
+   
+
+
+
+    /* Desktop View */
+    @media (min-width: 768px) {
+      .menu-toggle {
+        display: none;
+      }
+
+      .navbar {
+        flex-wrap: none;
+      }
+
+      .center-logo {
+        order: 0;
+        width: auto;
+        margin: 0;
+      }
+
+      .nav-left
+      {
+        display: flex !important;
+        flex-direction: row;
+        width: auto;
+        padding: 0;
+        margin-left: 20px;
+        font-size: 12px;
+        color: black;
+      }
+       .nav-right
+      {
+        display: flex !important;
+        flex-direction: row;
+        width: auto;
+        padding: 20px;
+        margin-left: 250px;
+        color: rebeccapurple;
+      }
+
+      .nav-left a,
+      .nav-right a {
+        margin: 0 30px;
+        padding-right: 20px;
+      }
+
+      .dropdown-content {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #222;
+        padding: 10px;
+        display: none;
+        min-width: 150px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        z-index: 10;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: flex;
+      }
+
+      .dropdown-content a {
+        font-size: 14px;
+        color: white;
+        text-align: left;
+      }
+
+      .dropdown-content a:hover {
+        color: rebeccapurple;
+      }
+    }
+  </style>
+</head>
+  <body>
+
+    <nav class="navbar" id="navbar">
+      <!-- Hamburger (3 lines) -->
+
+      <div class="center-logo"><image src="https://static.rakuten.com/static/svg/rakuten/rak-logo-brand-v1.svg" width="100px" ></image></div>
+
+      <div class="menu-toggle" id="menu-toggle">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      <div class="nav-left">
+        <div class="dropdown" id="dropdown">
+          <a href="#projects">Shop by Category ▾</a>
+          <div class="dropdown-content">
+            <a href="#">Travels & Vacations</a>
+            <a href="#">Beauty & Wellness</a>
+            <a href="#">Clothing</a>
+            <a href="#">Accessories</a>
+              <a href="#">Autos & Tires</a>
+              <a href="#">Baby & Toddlers</a>
+          </div></div>
+        <a href="#">Browser Extension</a>
+        <a href="#">Mobile App</a>
+      </div></div>
+
+      <div class="nav-right">
+        <a href="#" class="active"><p style="color: rebeccapurple;" >Sign In</p></a>
+        <a href="#  "><button>Join Now</button></a>
+      </div>
+    </nav>
+
+    <!-- Sections -->
+
+  <div class="get">
+
+    <h1>
+      <b>Get over 10% Cash Back <br>
+        for the first seven days
+      </b>
+    </h1><br>
+
+    <p style="font-size: 20px;" >
+      Join today and start stacking Cash Back on top of holiday sales <br>
+      at the stores you love. Sign up now and let the savings begin.
+    </p><br><br>
+
+    <button>Join for Free</button>
+    
+    <div class="get2">
+      <button>Add to Chrome</button>
+    </div>
+    </div><br>
+
+    <div class="image">
+          <image src="https://static.rakuten.com/img/media/43359/holiday-hero-img-1_1.png" width="550px" height="550px" ></image>
+    </div>
+
+    <div class="million">
+      <image src="https://static.rakuten.com/img/media/41642/250905-bonus-hero-dt-socialproof@2x.png" width="460px" ></image>
+    </div>
+
+    <div class="miniget">
+      <p style="font-size: 11px;">Get an extra 10% Cash Back, up to $50. After that, regular rates apply. 
+        <a href="https://www.rakuten.com/help/article/boost-bonus-terms-7-days-50-cap-20416064094355" style="color: grey;" >Terms apply</a> .</p>
+    </div>
+
+    <!--Lulumen-->
+
+    <div class="gengroup">
+    <div class="group">
+
+    <div class="lulu">
+      <div class="lulumen">
+      <image src="https://static.rakuten.com/img/store/13779/lululemon-mark-fullcolor-13779@4x-090624.png" width="50px" height="50px" ></image>
+    </div>
+    <div class="enclose">
+      <b>lulumen</b> <br>
+      <b style="font-size: 13px; color: rebeccapurple;" >25% Cash Back</b>
+      <div class="lulubutton" style="font-size: 14px;">&#x1F5F2; Boosted</div>
+    </div>
+    </div><br>
+
+     <div class="lulu">
+      <div class="lulumen">
+      <image src="https://static.rakuten.com/img/store/8333/macys-mark-fullcolor-8333@4x.png" width="50px" height="50px" ></image>
+    </div>
+    <div class="enclose">
+      <b>Macy's</b> <br>
+      <b style="font-size: 13px; color: rebeccapurple;" >14% Cash Back</b>
+      <div class="lulubutton" style="font-size: 14px;">&#x1F5F2; Boosted</div>
+    </div>
+    </div><br>
+
+     <div class="lulu">
+      <div class="lulumen">
+      <image src="https://static.rakuten.com/img/store/4548/sephora-mark-fullcolor-4548@4x.png" width="50px" height="50px" ></image>
+    </div>
+    <div class="enclose">
+      <b>Sephora</b> <br>
+      <b style="font-size: 13px; color: rebeccapurple;" >Up to 16% Cash Back</b>
+      <div class="lulubutton" style="font-size: 14px;">&#x1F5F2; Boosted</div>
+    </div>
+    </div>
+    </div><br>
+
+    <!--Group 2-->
+
+    <div class="group2">
+
+    <div class="lulu">
+      <div class="lulumen">
+      <image src="https://static.rakuten.com/img/store/21176/temu-mark-fullcolor-21176@4x-copy.png" width="50px" height="50px" ></image>
+    </div>
+    <div class="enclose">
+      <b>TEMU</b> <br>
+      <b style="font-size: 13px; color: rebeccapurple;" >12% Cash Back</b>
+      <div class="lulubutton" style="font-size: 14px;">&#x1F5F2; Boosted</div>
+    </div>
+    </div><br>
+
+     <div class="lulu">
+      <div class="lulumen">
+      <image src="https://static.rakuten.com/img/store/3993/ebay-mark-fullcolor-3993@4x.png" width="50px" height="50px" ></image>
+    </div>
+    <div class="enclose">
+      <b>eBay</b> <br>
+      <b style="font-size: 13px; color: rebeccapurple;" >Up to 11% Cash Back</b>
+      <div class="lulubutton" style="font-size: 14px;">&#x1F5F2; Boosted</div>
+    </div>
+    </div><br>
+
+     <div class="lulu">
+      <div class="lulumen">
+      <image src="https://static.rakuten.com/img/store/16788/chewy-mark-fullcolor-16788@4x-2.png" width="50px" height="50px" ></image>
+    </div>
+    <div class="enclose">
+      <b>Chewy</b> <br>
+      <b style="font-size: 13px; color: rebeccapurple;" >12% Cash Back</b>
+      <div class="lulubutton" style="font-size: 14px;">&#x1F5F2; Boosted</div>
+    </div>
+    </div>
+    </div><br>
+
+    <!--Group 3-->
+
+    <div class="group3">
+
+    <div class="lulu">
+      <div class="lulumen">
+      <image src="https://static.rakuten.com/img/store/9528/nike-mark-fullcolor-9528@4x.png" width="50px" height="50px" ></image>
+    </div>
+    <div class="enclose">
+      <b>Nike</b> <br>
+      <b style="font-size: 13px; color: rebeccapurple;" >20% Cash Back</b>
+      <div class="lulubutton" style="font-size: 14px;">&#x1F5F2; Boosted</div>
+    </div>
+    </div><br>
+
+     <div class="lulu">
+      <div class="lulumen">
+      <image src="https://static.rakuten.com/img/store/1316/cvsdotcom-mark-fullcolor-1316@4x-041425@4x.png" width="50px" height="50px" ></image>
+    </div>
+    <div class="enclose">
+      <b>CVS</b> <br>
+      <b style="font-size: 13px; color: rebeccapurple;" >15% Cash Back</b>
+      <div class="lulubutton" style="font-size: 14px;">&#x1F5F2; Boosted</div>
+    </div>
+    </div><br>
+
+     <div class="lulu">
+      <div class="lulumen">
+      <image src="https://static.rakuten.com/img/store/4207/ultabeauty-mark-fullcolor-4207@4x-101024.png" width="50px" height="50px" ></image>
+    </div>
+    <div class="enclose">
+      <b>Ulta Beauty</b> <br>
+      <b style="font-size: 13px; color: rebeccapurple;" >12% Cash Back</b>
+      <div class="lulubutton" style="font-size: 14px;">&#x1F5F2; Boosted</div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <!--Here's how Rakuten works-->
+
+    <div class="here"><h2>Here's how Rakuten works</h2></div>
+
+    <div class="bigenclose">
+    <div class="big">
+      <image src="https://static.rakuten.com/img/media/37274/hiw-1.png" width="380px" height="350px" ></image><br><br>
+      <b>1. Join for free</b><br>
+      <p style="font-size: 14px;">Sign up and start shopping. Shop on Rakuten.com, <br>
+      download the browser extension or get the app.</p>
+    </div>
+
+     <div class="big">
+      <image src="https://static.rakuten.com/img/media/dls/override/1738605300529/hiw-2.png" width="380px" height="350px" ></image><br><br>
+      <b>2. Shop and earn Cash Back</b><br>
+      <p style="font-size: 14px;">As you shop on store sites, Cash Back adds up in your <br>
+      account. How? Stores pay us for sending them shoppers <br>
+      and we share that cash with you.</p>
+    </div>
+
+     <div class="big">
+      <image src="https://static.rakuten.com/img/media/37274/hiw-image-step-3-control@4x.png" width="380px" height="350px" ></image><br><br>
+      <b>3. Get paid!</b><br>
+     <p style="font-size: 14px;">Cash Back is sent via PayPal or check as soon as 15 days <br>
+     after your first purchase. After that, get paid quarterly.</p>
+    </div>
+    </div>
+
+    <!--Card-->
+    
+    <div class="cardenclose">
+    <div class="card">
+      <image src="https://static.rakuten.com/img/dls/text/asset2-1600x800.png" width="700px" ></image>
+    </div>
+    <div class="wecard">
+      <h1>We’ve paid members over $4.6 billion in Cash Back</h1>
+      <p style="color: grey;">There’s a reason we’re the #1 Cash Back shopping <br> 
+      companion. Don’t believe us? Just ask our community <br>
+      of 17+ million members.</p>
+    </div>
+    </div><br><br><br>
+
+     
+    <div class="cardenclose">
+          <div class="wecard2">
+      <h1>More for you, all with Cash Back</h1>
+      <p style="color: grey;">Earn on everything from clothes and electronics, to <br>
+        restaurants and ride-sharing. We’ll find you deals on <br>
+        more brands, apps and services so you can shop easy.
+    </div>
+    <div class="card">
+      <image src="https://static.rakuten.com/img/dls/text/anonymous-home-page-mweb--_secondary-image---shoe@2x-2.png" width="700px" height="330px" ></image>
+    </div>
+    </div><br><br><br>
+
+    <div class="cardenclose">
+    <div class="card">
+      <image src="https://static.rakuten.com/img/dls/text/asset4-1600x800.png" width="700px" ></image>
+    </div>
+    <div class="wecard">
+      <h1>Shop whenever you want, <br> however you want</h1>
+      <p style="color: grey;">Shopping smarter doesn’t have to be harder. Start with <br>
+         Rakuten via desktop, the App or our extension and let <br>
+          us do the deal-finding for you.
+    </div>
+    </div>
+
+    <!--It Pays-->
+
+    <div class="itpays">
+      <h style="font-size: 33px;">It pays to shop with Rakuten</h><br>
+      <p style="color: grey;font-size: 20px;">Numbers don’t lie. Shopping with Rakuten adds up big time.</p>
+    </div>
+
+    <div class="paysenclose">
+
+    <div class="pays">
+    <div class="itpayspics">
+      <image src="https://static.rakuten.com/img/media/dls/override/1678320090223/fact_1.png" width="120px" height="120px"></image>
+    </div><br><br>
+    <h2>17M</h2>
+     <b><div class="people"> People earning Cash Back <br> with Rakuten</div></b>
+    </div>
+
+    <div class="pays">
+    <div class="itpayspics">
+      <image src="https://static.rakuten.com/img/media/dls/override/1678320090555/fact_2.png" width="120px" height="120px"></image>
+    </div><br><br>
+    <h2>$4.6B</h2>
+     <b><div class="people">Total paid to members <br> since 1999</div></b>
+    </div>
+
+    <div class="pays">
+    <div class="itpayspics">
+      <image src="https://static.rakuten.com/img/media/dls/override/1678320090474/fact_3.png" width="120px" height="120px"></image>
+    </div><br><br>
+    <h2>33,000+</h2>
+     <b><div class="people">reviews on Trustpilot</div></b>
+    </div>
+
+    <div class="pays">
+    <div class="itpayspics">
+      <image src="https://static.rakuten.com/img/media/dls/override/1678320090641/fact_4.png" width="120px" height="120px"></image>
+    </div><br><br>
+    <h2>$101.46</h2>
+     <b><div class="people">Average Cash Back per member in 2024
+    </div></b>
+    </div>
+    </div>
+
+    <!--Join-->
+
+    <div class="join">
+      <b style="font-size: 30px;">Join now for an extra 10% Cash Back on purchases made in your first 7 days.*</b>
+      <button><b>Join now</b></button> <br>
+      <a href="https://www.rakuten.com/help/article/boost-bonus-terms-7-days-50-cap-20416064094355" style="font-size: 15px;color: rebeccapurple;text-decoration: none;">*Terms and Bonus Cap apply.</a>
+      <p style="font-size: 15px;">By becoming a member, you agree to our <a href="https://www.rakuten.com/help/article/privacy-policy" style="color: rebeccapurple;font-size: 15px;text-decoration: none;">Terms & Conditions and Privacy Policy.</a> <br>
+      All trademarks are proprietary to Ebates Inc. <br>
+      ©2025 Ebates Inc. dba Rakuten. All rights reserved.</p>
+    </div>
+
+    <div class="store"><b style="font-size: 25px;">Stores our members love</b></div>
+
+    <div class="storeenclose">
+      
+    <div class="stores">
+      <a href="https://www.rakuten.com/shop/qvc" style="color: rebeccapurple;text-decoration: none;"><b>QVS</b></a> <br><br>
+      <a href="https://www.rakuten.com/shop/saksfifthavenue" style="color: rebeccapurple;text-decoration: none;"><b>Saks Fifth Avenue</b></a> <br><br>
+      <a href="https://www.rakuten.com/shop/sephora" style="color: rebeccapurple;text-decoration: none;"><b>Sephora</b></a> <br><br>
+      <a href="https://www.rakuten.com/shop/expedia" style="color: rebeccapurple;text-decoration: none;"><b>Expedia</b></a> <br><br>
+      <a href="https://www.rakuten.com/shop/neimanmarcus" style="color: rebeccapurple; text-decoration: none;"><b>Nieman Marcus</b></a> <br><br>
+      <a href="https://www.rakuten.com/shop/delltechnologies" style="color: rebeccapurple; text-decoration: none;"><b>Dell Technologies</b></a> <br><br>
+      <a href="https://www.rakuten.com/shop/bloomingdales"style="color: rebeccapurple; text-decoration: none;"><b>Bloomingdale's</b></a> <br><br>
+      <a href="https://www.rakuten.com/shop/hotels" style="color: rebeccapurple; text-decoration: none;"><b>Hotels.com</b></a> <br><br>
+      <a href="https://www.rakuten.com/shop/lenovo" style="color: rebeccapurple; text-decoration: none;"><b>Lenovo</b></a> <br><br>
+    </div>
+
+    <div class="stores">
+      <a href="https://www.rakuten.com/shop/petsmart" style="color: rebeccapurple;text-decoration: none;"><b>PetSmart</b></a> <br><br>
+      <a href="https://www.rakuten.com/shop/underarmour" style="color: rebeccapurple;text-decoration: none;"><b>Under Armor</b></a> <br><br>
+      <a href="https://www.rakuten.com/shop/travelocity" style="color: rebeccapurple;text-decoration: none;"><b>Travevelociy</b></a> <br><br>
+      <a href="https://www.rakuten.com/shop/nike" style="color: rebeccapurple;text-decoration: none;"><b>Nike</b></a> <br><br>
+      <a href="https://www.rakuten.com/shop/aero" style="color: rebeccapurple; text-decoration: none;"><b>Aeropostale</b></a> <br><br>
+      <a href="https://www.rakuten.com/shop/temu" style="color: rebeccapurple; text-decoration: none;"><b>TEMU</b></a> <br><br>
+      <a href="https://www.rakuten.com/ebay"style="color: rebeccapurple; text-decoration: none;"><b>eBay</b></a> <br><br>
+      <a href="https://www.rakuten.com/shop/adidas" style="color: rebeccapurple; text-decoration: none;"><b>Adidas</b></a> <br><br>
+      <a href="https://www.rakuten.com/shop/chewy" style="color: rebeccapurple; text-decoration: none;"><b>Chewy</b></a> <br><br>
+    </div>
+
+    <div class="stores">
+      <a href="https://www.rakuten.com/shop/samsung" style="color: rebeccapurple;text-decoration: none;"><b>Samsung</b></a> <br><br>
+      <a href="https://www.rakuten.com/shop/ticketmaster" style="color: rebeccapurple;text-decoration: none;"><b>Ticketmaster</b></a> <br><br>
+      <a href="https://www.rakuten.com/shop/instacart" style="color: rebeccapurple;text-decoration: none;"><b>Instacart</b></a> <br><br>
+      <a href="https://www.rakuten.com/shop/dermstore" style="color: rebeccapurple;text-decoration: none;"><b>Dermstore</b></a> <br><br>
+      <a href="https://www.rakuten.com/shop/walgreens" style="color: rebeccapurple; text-decoration: none;"><b>Walgreens</b></a> <br><br>
+      <a href="https://www.rakuten.com/shop/apple" style="color: rebeccapurple; text-decoration: none;"><b>Apple.com</b></a> <br><br>
+      <a href="https://www.rakuten.com/shop/acehardware"style="color: rebeccapurple; text-decoration: none;"><b>Ace Hardware</b></a> <br><br>
+      <a href="https://www.rakuten.com/shop/newbalance" style="color: rebeccapurple; text-decoration: none;"><b>New Balance</b></a> <br><br>
+      <a href="https://www.rakuten.com/shop/dsw" style="color: rebeccapurple; text-decoration: none;"><b>DSW</b></a> <br><br>
+    </div>
+
+    <div class="stores">
+      <a href="https://www.rakuten.com/shop/aliexpress" style="color: rebeccapurple;text-decoration: none;"><b>AliExpress</b></a> <br><br>
+      <a href="https://www.rakuten.com/shop/zoro" style="color: rebeccapurple;text-decoration: none;"><b>Zoro</b></a> <br><br>
+      <a href="https://www.rakuten.com/shop/grubhub" style="color: rebeccapurple;text-decoration: none;"><b>Grubhub</b></a> <br><br>
+      <a href="https://www.rakuten.com/shop/lego" style="color: rebeccapurple;text-decoration: none;"><b>Lego</b></a> <br><br>
+      <a href="https://www.rakuten.com/shop/neimanmarcus" style="color: rebeccapurple; text-decoration: none;"><b>Nieman Marcus</b></a> <br><br>
+      <a href="https://www.rakuten.com/shop/delltechnologies" style="color: rebeccapurple; text-decoration: none;"><b>Dell Technologies</b></a> <br><br>
+      <a href="https://www.rakuten.com/shop/bloomingdales"style="color: rebeccapurple; text-decoration: none;"><b>Bloomingdale's</b></a> <br><br>
+      <a href="https://www.rakuten.com/shop/hotels" style="color: rebeccapurple; text-decoration: none;"><b>Hotels.com</b></a> <br><br>
+      <a href="https://www.rakuten.com/shop/lenovo" style="color: rebeccapurple; text-decoration: none;"><b>Lenovo</b></a> <br><br>
+    </div>
+    </div>
+
+    <!--Footer-->
+
+   <div class="storeenclose2">
+    <div class="redenclose">
+        <div class="stores2">
+         <h4>DOWNLOAD OUR APP</h4> <br>
+        <a href="https://go.rakuten.com/open-app?rr_visit_id=b9de7a81-668e-47f0-a77a-b460ef50ada2&eb_web_session_id=aaa7cYtZ1a1f06UfBsoPz&ebtoken=no_euid&anon_id=de276caa-e6fd-4248-a3fa-56cfe913bd7c&ebstask=shoppingTripAttrProps">Rakuten Mobile Apps</a> <br><br>
+        for iOS and Android<br><br>
+        <h4>PARTNER SITES</h4><br>
+        <a href="https://www.rakuten.ca/" >  <p>Canada</p></a> 
+        <a href="https://www.rebates.jp/"> <p>Japan</p></a> 
+        <a href=""><p>Cartera</p></a> 
+        <a href=""><p>ShopStyle</p></a> 
+        <a href=""><p>Rakuten France</p></a>
+        </div><br>
+         <div class="stores2">
+            <h4>ABOUT</h4> <br>
+         <a href=""><p>Rakuten Mobile Apps</p></a>   
+         <a href="https://www.rakuten.ca/" >  <p>Canada</p></a> 
+        <a href="https://www.rebates.jp/"> <p>Japan</p></a> 
+        <a href=""><p>Cartera</p></a> 
+        <a href=""><p>ShopStyle</p></a> 
+        <a href=""><p>Rakuten France</p></a>
+       <a href="https://www.rakuten.ca/" >  <p>Canada</p></a> 
+        <a href="https://www.rebates.jp/"> <p>Japan</p></a> 
+        <a href=""><p>Cartera</p></a> 
+        <a href=""><p>ShopStyle</p></a> 
+        <a href=""><p>Rakuten France</p></a>
+       <a href="https://www.rakuten.ca/" >  <p>Canada</p></a> 
+        <a href="https://www.rebates.jp/"> <p>Japan</p></a> 
+        <a href=""><p>Cartera</p></a> 
+        <a href=""><p>ShopStyle</p></a> 
+        <a href=""><p>Rakuten France</p></a>    </div><br>
+         <div class="stores2">
+            <h4>STORES & BRANDS</h4> <br>
+                 <a href=""><p>Rakuten Mobile Apps</p></a>   
+        <a href="https://www.rakuten.ca/" >  <p>Canada</p></a> 
+        <a href="https://www.rebates.jp/"> <p>Japan</p></a> 
+        <a href=""><p>Cartera</p></a> 
+        <a href=""><p>ShopStyle</p></a> 
+        <a href=""><p>Rakuten France</p></a>
+         <a href="https://www.rakuten.ca/" >  <p>Canada</p></a> 
+        <a href="https://www.rebates.jp/"> <p>Japan</p></a>  
+        <a href=""><p>Rakuten France</p></a> 
+         <a href=""><p>Cartera</p></a> 
+        <a href=""><p>ShopStyle</p></a> 
+        <a href=""><p>Rakuten France</p></a><br>
+        <h4> SEASONAL PAGES </h4><br>
+        <a href="https://www.rakuten.ca/" >  <p>Canada</p></a> 
+        <a href="https://www.rebates.jp/"> <p>Japan</p></a> 
+        <a href=""><p>Cartera</p></a> 
+        <a href=""><p>ShopStyle</p></a> 
+        <a href=""><p>Rakuten France</p></a>
+        </div><br>
+         <div class="stores2">
+             <h4>POPULAR CATEGORIES</h4> <br>
+                 <a href=""><p>Rakuten Mobile Apps</p></a>   
+         <a href="https://www.rakuten.ca/" >  <p>Canada</p></a> 
+        <a href="https://www.rebates.jp/"> <p>Japan</p></a> 
+        <a href=""><p>Cartera</p></a> 
+        <a href=""><p>ShopStyle</p></a> 
+        <a href=""><p>Rakuten France</p></a>
+         <a href="https://www.rakuten.ca/" >  <p>Canada</p></a> 
+        <a href="https://www.rebates.jp/"> <p>Japan</p></a> 
+        <a href=""><p>Rakuten France</p></a> 
+         <a href=""><p>Cartera</p></a> 
+        <a href=""><p>ShopStyle</p></a> <br> 
+        <h4> TOOLS & SERVICES </h4><br>
+        <a href="https://www.rakuten.ca/" >  <p>Canada</p></a> 
+        <a href="https://www.rebates.jp/"> <p>Japan</p></a> 
+        <a href=""><p>Cartera</p></a> 
+        <a href=""><p>ShopStyle</p></a> 
+        <a href=""><p>Rakuten France</p></a>
+      </div> 
+      </div>
+      <div class="underred">
+        <hr>  <br><br><br><br>
+         <p style="text-align: center; font-size: 14px; color: #aaa;">
+        © 2025 Rakuten Clone — All Rights Reserved
+      </p>
+      </div>
+      </div>
+      </div>
+
+      
+    
+    <!-- Script -->
+    <script>
+      const toggle = document.getElementById('menu-toggle');
+      const navbar = document.getElementById('navbar');
+      const allLinks = document.querySelectorAll('.nav-left a, .nav-right a');
+      const dropdown = document.getElementById('dropdown');
+
+      toggle.addEventListener('click', () => {
+        navbar.classList.toggle('open');
+      });
+
+      allLinks.forEach(link => {
+        link.addEventListener('click', function () {
+          allLinks.forEach(l => l.classList.remove('active'));
+          this.classList.add('active');
+          navbar.classList.remove('open');
+        });
+      });
+
+      dropdown.addEventListener('click', (e) => {
+        if (window.innerWidth < 768) {
+          e.preventDefault();
+          dropdown.classList.toggle('open');
+        }
+      });
+    </script>
+
+  </body>
+</html>
