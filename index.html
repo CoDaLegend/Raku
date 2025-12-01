@@ -130,22 +130,44 @@
       color: white;
       width: 120px;
       height: 45px;
+      border: 0px;
       border-radius: 30px;
       border-color: none;
       margin-top: -15px;
       margin-left: -50px;
       font-size: 16px;
      }
+     button:hover{
+      cursor: pointer;
+     }
+
+     /*Section 1*/
+
+    .getimage{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+  
     .get{
-      background-color: none;
-      width: 600px;
-      height: 240px;
+      background-color: transparent;
+      height: 100%;
       color: black;
-      margin-left: 50px;
       display: flex;
       flex-direction: column;
       margin-top: 80px;
+      flex: 20%;
+      text-align: justify;
+      font-size: 30px;
+      font-weight: 310;
       }
+      @media(min-width:601px) and (max-width:1024px){
+      .get{
+        padding-bottom: 50px;
+      }
+    }
     .get button{
       background-color: rebeccapurple;
       color: white;
@@ -156,6 +178,9 @@
       justify-content: center;
       align-items: center;
       margin-left: 3px;
+    }
+    .get button:hover{
+      cursor: pointer;
     }
     .get2 button{
       background-color: papayawhip;
@@ -169,27 +194,50 @@
       margin-left: 190px;
       margin-top: -49px;
     }
-  .image{
-      background-color: n;
-      width: 600px;
-      height: 400px;
+  .image1{
+      background-image: url(https://static.rakuten.com/img/media/43359/holiday-hero-img-1_1.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      height: 70vh;
       color: black;
-      margin-left: 50px;
       display: flex;
       flex-direction: column;
-      margin-top: -350px;
-      margin-left: 750px;
+      flex: 50%;
+    }
+    @media(min-width:601px) and (max-width:1024px){
+      .image1{
+        flex: 15%;
+      }
+    }
+    @media(min-width:1025px){
+      .image1{
+        flex: 10%;
+         margin-left: 50px;
+         margin-top: 30px;
+      }
     }
     .million{
-      background-color: none;
-      width: 600px;
-      height: 100px;
+      background-color: transparent;
+      width: 100%;
+      height: 100%;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      margin-left: -25px;
-      margin-top: -40px;
+      margin-left: -20px;
+    }
+    @media(min-width:601px) and (max-width:1024px){
+      .million{
+        width: 60%;
+      }
+    }
+    @media(min-width:1025px){
+      .million{
+        width: 100%;
+         margin-left: -430px;
+         margin-top: -100px;
+      }
     }
      .miniget{
       background-color: none;
@@ -199,10 +247,12 @@
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      margin-left: -45px;
-      margin-top: -25px;
+      margin-left: -60px;
       color: grey;
     }
+
+    /*Lulumen*/
+
     .lulu{
       background-color: none;
       width: 250px;
@@ -238,41 +288,44 @@
       border-radius: 5px;
     }
     .group{
-      background-color: none;
-      width: 300px;
-      height: 350px;
-      display: flex;
-      flex-direction: column;
-      margin-left: -10px;
-    }
-    .group2{
-      background-color: none;
-      width: 300px;
-      height: 350px;
-      display: flex;
-      flex-direction: column;
-      
-    }
-    .group3{
-      background-color: none;
-      width: 300px;
-      height: 350px;
-      display: flex;
-      flex-direction: column;
-    }
-    .gengroup{
-      background-color: none;
+      background-color: transparent;
       width: 100%;
-      height: 360px;
+      height: 100%;
       display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
+      flex-direction: column;
+    }
+    @media(min-width:601px) and (max-width:1024px){
+      .group{
+        flex: 10%;
+      }
+    }@media(min-width:1025px){
+      .group{
+        flex: 10%;
+      }
+    }
+    
+    /*Gengroup*/
+
+    .gengroup{
+      background-color: transparent;
+      flex-wrap: wrap;
+      height: 100%;
+      display: flex;
+      gap: 10px;
       margin-top: 70px;
     }
+    @media(min-width:1025px){
+      .gengroup{
+        justify-content: space-evenly;
+      }
+    }
+
+    /*Here*/
+
     .here{
-      background-color: none;
+      background-color: transparent;
       width: 100%;
-      height: 50px;
+      height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -280,67 +333,197 @@
       padding-bottom: 50px;
     }
     .big{
-      background-color: none;
-      width: 410px;
-      height: 500px;
+      background-color: transparent;
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      text-align: justify;
     }
+    @media(min-width:601px) and (max-width:1024px){
+      .big{
+        width: 50vw;
+        height: 100%;
+        
+      }
+    }
+     @media(min-width:1025px){
+      .big{
+        flex: 10%;
+      }
+    }
+    .bigimg{
+      background-image: url(https://static.rakuten.com/img/media/37274/hiw-1.png);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 70vh;
+      border-radius: 20px;
+    }
+    .bigimg1{
+      background-image: url(https://static.rakuten.com/img/media/dls/override/1738605300529/hiw-2.png);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 70vh;
+      border-radius: 20px;
+    }
+    .bigimg2{
+      background-image: url(https://static.rakuten.com/img/media/37274/hiw-image-step-3-control@4x.png);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 70vh;
+      border-radius: 20px;
+    }
+
     .bigenclose{
-      background-color: none;
-      width: 1300px;
-      height: 500px;
+      background-color: transparent;
+      width: 100%;
+      height: 100%;
+      gap: 10px;
       display: flex;
-      flex-direction: row;
-      justify-content: center;
-      margin-left: 50px;
+      flex-wrap: wrap;
+    }
+    @media(min-width:601px) and (max-width:1024px){
+      .bigenclose{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+      }
+    }
+
+    /*Card*/
+    .carde{
+      width: 90%;
+      height: 100%;
+      margin-top: 100px;
+      gap: 50px;
+      padding: 10px;
     }
     .cardenclose{
-      background-color: none;
-      width: 1300px;
-      height: 300px;
+      background-color: transparent;
+      width: 100%;
+      height: 100%;
       display: flex;
-      flex-direction: row;
+      justify-content: left;
+      align-items: left;
+      flex-wrap: wrap;
+     
+    }
+    .cardenclose0{
+      background-color: transparent;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: left;
+      align-items: left;
+      flex-wrap: wrap;
+    }
+    @media(min-width:601px) and (max-width:1024px){
+      .cardenclose0{
+        flex-direction: row-reverse;
+        
+      }
+    }
+     @media(min-width:1025px){
+      .cardenclose0{
+        flex-direction: row-reverse;
+      }
     }
     .card{
-      background-color: none;
-      width: 600px;
-      height: 300px;
+      background-color: transparent;
+      width: 50%;
+      height: 50%;
+      margin-left: -100px;
+    }
+    .card0{
+      background-color: transparent;
+      width: 50%;
+      height: 50%;
+      margin-left: -120px;
+      margin-top: 50px;
+    }
+    @media(min-width:601px) and (max-width:1024px){
+      .card0{
+        margin-top: 0px;
+        margin-left: -50px;
+      }
+    }
+     @media(min-width:1025px){
+      .card0{
+        margin-top: 0px;
+          margin-left: 0px;
+      }
     }
     .wecard{
-      background-color: none;
-      width: 500px;
-      height: 150px;
-      margin-top: 80px;
-      margin-left: 150px;
+      background-color: transparent;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+    }
+    @media(min-width:601px) and (max-width:1024px){
+      .wecard{
+        margin-left: 150px;
+        margin-top: 100px;
+        width: 30%; 
+      }
+    }
+     @media(min-width:1025px){
+      .wecard{
+        margin-top: 100px;
+        width: 50%;
+      }
     }
     .wecard2{
-      background-color: none;
-      width: 500px;
-      height: 150px;
-      margin-top: 80px;
-      margin-left: 100px;
-      margin-right: 30px;
-      margin-top: 100px;
+      background-color: transparent;
+      width: 100%;
+      height: 100%;
+      margin-bottom: 50px;
+      text-align: center;
     }
+    @media(min-width:601px) and (max-width:1024px){
+      .wecard2{
+        margin-left: 10px;
+        margin-top: 100px;
+        width: 30%;
+        margin-bottom: 0px;
+        
+      }
+    }
+     @media(min-width:1025px){
+      .wecard2{
+        width: 50%;
+        margin-top: 120px;
+        padding: 20px;
+        margin-bottom: 0px;
+      }
+    }
+
+    /*It Pays*/
+    /*rgb(244, 244, 247)*/
+    
     .itpays{
       background-color: rgb(244, 244, 247);
       width: 100%;
-      height: 70px;
+      height: 100%;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      margin-top: 50px;
       padding-top: 100px;
     }
     .pays{
-      background-color: none;
-      height: 200px;
-      width: 220px;
+      background-color: transparent;
+      height: 100%;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      margin-left: 5px;
+      flex: 20%;
     }
     .itpayspics{
       background-color: rgb(244, 244, 247);
@@ -350,33 +533,56 @@
       margin-bottom: 20px;
     }
     .people{
-      background-color: none;
-      width: 220px;
-      height: 50px;
-      margin-left: 50px;
+      background-color: transparent;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
     .paysenclose{
       background-color:rgb(244, 244, 247);
-      width: 1350px;
-      height: 350px;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
-      padding-top: 80px;
-    }
-    .join{
-      background-color: none;
-      width: 100%;
-      height: 300px;
+      height: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: space-evenly;
-      align-items: center;
-      margin-top: 50px;
-      margin-bottom: 50px;
+      gap: 20px;
+      justify-content: center;
+      padding-top: 30px;
+      padding-bottom: 80px;
+      flex: 100%;
     }
+     @media(min-width:601px) and (max-width:1024px){
+      .paysenclose{
+        flex-direction: row;
+      }
+    }
+     @media(min-width:1025px){
+      .paysenclose{
+        gap: 0px;
+       flex-direction: row;
+      }
+    }
+
+    /*Join*/
+
+    .join{
+      background-color: transparent;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      gap: 8px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    /*Store*/
+    
     .store{
-      background-color: none;
+      background-color: transparent;
       width: 100%;
       height: 50px;
       display: flex;
@@ -384,26 +590,28 @@
       align-items: center;
     }
     .stores{
-      background-color: none;
-      width: 160px;
-      height: 500px;
+      background-color: transparent;
+      width: 100%;
+      height: 100%;
       display: flex;
       flex-direction: column;
     }
     .storeenclose{
-      background-color: none;
-      width: 1350px;
-      height: 600px;
+      background-color: transparent;
+      height: 100%;
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
-      
       margin-top: 25px;
+      padding-bottom: 100px;
     }
+
+    /*Store 2*/
+
     .storeenclose2{
       background-color: black;
-      width: 1350px;
-      height: 700px;
+      width: 100%;
+      height: 100%;
       display: flex;
       justify-content: space-between;
       margin-top: -100px;
@@ -412,23 +620,36 @@
     }
 
     .redenclose {
-        background-color: none;
-      width: 1300px;
-      height: 650px;
+        background-color: transparent;
+        width: 100%;
+      height: 100%;
       display: flex;
-      justify-content: space-between;
-      margin-bottom: 100px;
+      flex-direction: column;                                                                                                                                                                                                                     
+      justify-content: center;
+      padding-bottom: 20px;
+      
+    }
+     @media(min-width:601px) and (max-width:1024px){
+      .redenclose{
+        flex-direction: row;
+      }
+    }
+     @media(min-width:1025px){
+      .redenclose{
+       flex-direction: row;
+      }
     }
 
+   
     .underred {
-      width: 1300px;
-      height: 200px;
+      width: 100%;
+      height: 100%;
       background-color: none;
     }
     .stores2{
-      background-color: none;
-      width: 220px;
-      height: 430px;
+      background-color: transparent;
+      flex: 20%;
+      height: 100%;
       color: white;
       text-decoration: none;
     }
@@ -550,22 +771,22 @@
 
       <div class="nav-right">
         <a href="#" class="active"><p style="color: rebeccapurple;" >Sign In</p></a>
-        <a href="#  "><button>Join Now</button></a>
+        <a href="#"><button>Join Now</button></a>
       </div>
     </nav>
 
     <!-- Sections -->
 
+    <div class="getimage">
   <div class="get">
-
-    <h1>
-      <b>Get over 10% Cash Back <br>
+    <p>
+      <b>Get over 10% Cash Back <br>   
         for the first seven days
       </b>
-    </h1><br>
+    </p><br>
 
     <p style="font-size: 20px;" >
-      Join today and start stacking Cash Back on top of holiday sales <br>
+      Join today and start stacking Cash Back on top of holiday sales
       at the stores you love. Sign up now and let the savings begin.
     </p><br><br>
 
@@ -576,8 +797,7 @@
     </div>
     </div><br>
 
-    <div class="image">
-          <image src="https://static.rakuten.com/img/media/43359/holiday-hero-img-1_1.png" width="550px" height="550px" ></image>
+    <div class="image1"></div>
     </div>
 
     <div class="million">
@@ -626,11 +846,11 @@
       <div class="lulubutton" style="font-size: 14px;">&#x1F5F2; Boosted</div>
     </div>
     </div>
-    </div><br>
+    </div>
 
     <!--Group 2-->
 
-    <div class="group2">
+    <div class="group">
 
     <div class="lulu">
       <div class="lulumen">
@@ -664,11 +884,11 @@
       <div class="lulubutton" style="font-size: 14px;">&#x1F5F2; Boosted</div>
     </div>
     </div>
-    </div><br>
+    </div>
 
     <!--Group 3-->
 
-    <div class="group3">
+    <div class="group">
 
     <div class="lulu">
       <div class="lulumen">
@@ -711,64 +931,65 @@
 
     <div class="bigenclose">
     <div class="big">
-      <image src="https://static.rakuten.com/img/media/37274/hiw-1.png" width="380px" height="350px" ></image><br><br>
+      <div class="bigimg"></div><br><br>
       <b>1. Join for free</b><br>
-      <p style="font-size: 14px;">Sign up and start shopping. Shop on Rakuten.com, <br>
+      <p style="font-size: 14px;">Sign up and start shopping. Shop on Rakuten.com,
       download the browser extension or get the app.</p>
     </div>
 
      <div class="big">
-      <image src="https://static.rakuten.com/img/media/dls/override/1738605300529/hiw-2.png" width="380px" height="350px" ></image><br><br>
+      <div class="bigimg1"></div><br><br>
       <b>2. Shop and earn Cash Back</b><br>
-      <p style="font-size: 14px;">As you shop on store sites, Cash Back adds up in your <br>
-      account. How? Stores pay us for sending them shoppers <br>
+      <p style="font-size: 14px;">As you shop on store sites, Cash Back adds up in your
+      account. How? Stores pay us for sending them shoppers
       and we share that cash with you.</p>
     </div>
 
      <div class="big">
-      <image src="https://static.rakuten.com/img/media/37274/hiw-image-step-3-control@4x.png" width="380px" height="350px" ></image><br><br>
+      <div class="bigimg2"></div><br><br>
       <b>3. Get paid!</b><br>
-     <p style="font-size: 14px;">Cash Back is sent via PayPal or check as soon as 15 days <br>
+     <p style="font-size: 14px;">Cash Back is sent via PayPal or check as soon as 15 days
      after your first purchase. After that, get paid quarterly.</p>
     </div>
     </div>
 
     <!--Card-->
-    
+    <div class="carde">
     <div class="cardenclose">
     <div class="card">
       <image src="https://static.rakuten.com/img/dls/text/asset2-1600x800.png" width="700px" ></image>
     </div>
     <div class="wecard">
       <h1>We’ve paid members over $4.6 billion in Cash Back</h1>
-      <p style="color: grey;">There’s a reason we’re the #1 Cash Back shopping <br> 
-      companion. Don’t believe us? Just ask our community <br>
+      <p style="color: grey;">There’s a reason we’re the #1 Cash Back shopping 
+      companion. Don’t believe us? Just ask our community
       of 17+ million members.</p>
     </div>
-    </div><br><br><br>
+    </div>
 
      
-    <div class="cardenclose">
-          <div class="wecard2">
-      <h1>More for you, all with Cash Back</h1>
-      <p style="color: grey;">Earn on everything from clothes and electronics, to <br>
-        restaurants and ride-sharing. We’ll find you deals on <br>
-        more brands, apps and services so you can shop easy.
-    </div>
-    <div class="card">
+    <div class="cardenclose0">
+      <div class="card0">
       <image src="https://static.rakuten.com/img/dls/text/anonymous-home-page-mweb--_secondary-image---shoe@2x-2.png" width="700px" height="330px" ></image>
     </div>
-    </div><br><br><br>
+      <div class="wecard2">
+      <h1>More for you, all with Cash Back</h1>
+      <p style="color: grey;">Earn on everything from clothes and electronics, to 
+        restaurants and ride-sharing. We’ll find you deals on 
+        more brands, apps and services so you can shop easy.
+    </div>
+    </div>
 
     <div class="cardenclose">
     <div class="card">
       <image src="https://static.rakuten.com/img/dls/text/asset4-1600x800.png" width="700px" ></image>
     </div>
     <div class="wecard">
-      <h1>Shop whenever you want, <br> however you want</h1>
-      <p style="color: grey;">Shopping smarter doesn’t have to be harder. Start with <br>
-         Rakuten via desktop, the App or our extension and let <br>
+      <h1>Shop whenever you want, however you want</h1>
+      <p style="color: grey;">Shopping smarter doesn’t have to be harder. Start with
+         Rakuten via desktop, the App or our extension and let
           us do the deal-finding for you.
+    </div>
     </div>
     </div>
 
@@ -794,15 +1015,15 @@
       <image src="https://static.rakuten.com/img/media/dls/override/1678320090555/fact_2.png" width="120px" height="120px"></image>
     </div><br><br>
     <h2>$4.6B</h2>
-     <b><div class="people">Total paid to members <br> since 1999</div></b>
+     <b><div class="people">Total paid to members since <br> 1999</div></b>
     </div>
 
     <div class="pays">
     <div class="itpayspics">
       <image src="https://static.rakuten.com/img/media/dls/override/1678320090474/fact_3.png" width="120px" height="120px"></image>
     </div><br><br>
-    <h2>33,000+</h2>
-     <b><div class="people">reviews on Trustpilot</div></b>
+    <h2>4.5 Rating</h2>
+     <b><div class="people">from 33k+ reviews on <br> Trustpilot</div></b>
     </div>
 
     <div class="pays">
@@ -810,7 +1031,7 @@
       <image src="https://static.rakuten.com/img/media/dls/override/1678320090641/fact_4.png" width="120px" height="120px"></image>
     </div><br><br>
     <h2>$101.46</h2>
-     <b><div class="people">Average Cash Back per member in 2024
+     <b><div class="people">Average Cash Back per <br> member in 2024
     </div></b>
     </div>
     </div>
@@ -818,7 +1039,7 @@
     <!--Join-->
 
     <div class="join">
-      <b style="font-size: 30px;">Join now for an extra 10% Cash Back on purchases made in your first 7 days.*</b>
+      <b style="font-size: 30px;">Join now for an extra 10% Cash Back on purchases made in your first 7 days.*</b><br>
       <button><b>Join now</b></button> <br>
       <a href="https://www.rakuten.com/help/article/boost-bonus-terms-7-days-50-cap-20416064094355" style="font-size: 15px;color: rebeccapurple;text-decoration: none;">*Terms and Bonus Cap apply.</a>
       <p style="font-size: 15px;">By becoming a member, you agree to our <a href="https://www.rakuten.com/help/article/privacy-policy" style="color: rebeccapurple;font-size: 15px;text-decoration: none;">Terms & Conditions and Privacy Policy.</a> <br>
@@ -958,7 +1179,7 @@
         <hr>  <br><br><br><br>
          <p style="text-align: center; font-size: 14px; color: #aaa;">
         © 2025 Rakuten Clone — All Rights Reserved
-      </p>
+        </p>
       </div>
       </div>
       </div>
